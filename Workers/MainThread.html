@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Main Thread</title>
+  </head>
+  <body>
+    <script>
+      const worker = new Worker("workerThread.js");
+      console.log("starting calculation");
+      worker.postMessage(1000000000);
+      worker.onmessage = (event) => {
+        console.log(`result received: ${event.data}`);
+      };
+      console.log("main thread continues..");
+    </script>
+  </body>
+</html>
+
+<!-- Notes:
+
+"Worker Thread"
+1. Web workers in javascript run js in a sperate thread. 
+2. They are in web level and not js level 
+3. Prevent UI freezing
+4. Enables parallel execution
+5. Limitation are it cannot access DOM or window objects directly
+6. Uses postmessage and onmessage as event listeners
+
+-->
