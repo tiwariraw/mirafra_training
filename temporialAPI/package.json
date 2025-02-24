@@ -1,0 +1,18 @@
+{
+  "name": "temporialapi",
+  "version": "1.0.0",
+  "main": "temporialApi.js",
+  "type": "module",
+  "scripts": {
+    "start": "node ./temporialApi.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@js-temporal/polyfill": "^0.4.4",
+    "babel-plugin-proposal-pattern-matching": "^1.0.3",
+    "ts-pattern": "^5.6.2"
+  }
+}
